@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151816" />
+    <meta
+      name="description"
+      content="Drop a file. Share a link. Let it disappear."
+      data-i18n-content="meta.description"
+    />
+    <title data-i18n="meta.title">Vampdrop · temporary file sharing</title>
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+
+    <div class="shell">
+      <header>
+        <a class="brand" href="/" data-i18n-label="brand.home"
+          ><img src="/logo.png" width="44" height="48" alt="" /><span
+            >vampdrop<span class="brand-dot">.</span></span
+          ></a
+        >
+      </header>
+      <main id="main">
+        <section class="drop-zone" id="drop-zone" data-i18n-label="landing.selectFile">
+          <input
+            id="file-picker"
+            type="file"
+            class="visually-hidden"
+            data-i18n-label="landing.chooseFile"
+          />
+          <label class="drop-target" for="file-picker" tabindex="0" role="button">
+            <span class="drop-icon" aria-hidden="true"
+              ><svg viewBox="0 0 48 58" fill="none">
+                <path
+                  d="M10 4h20l11 11v35a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M30 4v11h11"
+                  stroke="var(--panel)"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M24 42V27m-7 7 7-7 7 7"
+                  stroke="var(--panel)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+            <span class="drop-title" data-i18n="landing.dropTitle">Drop a file.</span>
+            <span class="muted" data-i18n-html="landing.chooseHtml"
+              >Or <span class="text-link">choose a file</span> to share.</span
+            >
+            <!-- El texto está aquí dentro -->
+            <p class="drop-note" aria-live="polite" data-i18n="landing.checkingLimit">
+              Checking upload limit…
+            </p>
+          </label>
+        </section>
+        
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </main>
+      <footer>
+        <p class="footer-line">
+          <span data-i18n="footer.tagline">Drop a file. Share a link. Let it disappear.</span> ·
+          <a href="https://guns.lol/nrcsst" data-i18n="footer.source">$$$</a>
+        </p>
+        <div
+          class="language-picker"
+          id="language"
+          role="group"
+          data-i18n-label="language.label"
+          hidden
+        >
+          <svg class="language-icon" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.25" />
+            <path
+              d="M1.75 8h12.5M8 1.75c1.7 1.75 2.6 3.8 2.6 6.25S9.7 12.5 8 14.25 5.4 10.5 5.4 8 6.3 3.5 8 1.75Z"
+            />
+          </svg>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

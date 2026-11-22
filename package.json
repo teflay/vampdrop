@@ -1,0 +1,33 @@
+{
+  "name": "ghostdrop",
+  "version": "0.1.0",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env scripts/dev.js",
+    "start": "node --env-file-if-exists=.env scripts/dev.js",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.js && npm run format:check",
+    "format": "prettier --write apps scripts test package.json README.md CONTRIBUTING.md CHANGELOG.md SECURITY.md .prettierrc.json",
+    "format:check": "prettier --check apps scripts test package.json README.md CONTRIBUTING.md CHANGELOG.md SECURITY.md .prettierrc.json",
+    "start:backend": "node --env-file-if-exists=.env apps/backend/src/server.js",
+    "start:frontend": "node --env-file-if-exists=.env apps/frontend/server.js",
+    "hash-password": "node apps/backend/scripts/hash-password.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9"
+  },
+  "workspaces": [
+    "apps/backend",
+    "apps/frontend"
+  ],
+  "dependencies": {
+    "axios": "^1.21.1",
+    "compression": "^1.8.2",
+    "tunnelmole": "^2.4.0"
+  }
+}

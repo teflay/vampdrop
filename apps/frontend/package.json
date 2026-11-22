@@ -1,0 +1,14 @@
+{
+  "name": "@ghostdrop/frontend",
+  "version": "0.1.0",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "express": "^5.1.0"
+  }
+}
