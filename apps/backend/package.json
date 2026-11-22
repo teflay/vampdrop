@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
+    "start:all": "node src/server.js & node ../discord-bot/index.js",
     "dev": "node --watch src/server.js",
     "hash-password": "node scripts/hash-password.js"
   },
